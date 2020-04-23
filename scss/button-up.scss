@@ -1,0 +1,36 @@
+
+// Подключение button up
+
+// <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+// <div id="button-up"><i class="fas fa-chevron-up"></i></div>
+
+//Button-up ___________________________
+
+#button-up{
+   display: none;
+   position: fixed;
+   width: 41px;
+   height: 41px;
+   right: 30px;
+   bottom: 193px;
+   text-align: center;
+   font-size: 24px;
+   color: #4d4d4d;
+   background-color: #fff;
+   transition: .3s;
+ 
+   padding-top: 5px;
+ 
+   @include max-screen(425px) {
+     right: 10px;
+     bottom: 10px;
+   }
+ }
+ 
+ #button-up:hover{
+   cursor: pointer;
+   transition: .3s;
+   -webkit-box-shadow: 0 0 60px 10px #B3B3B3;
+   box-shadow: 0 0 60px 10px #B3B3B3;
+ }

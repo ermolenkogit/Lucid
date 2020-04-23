@@ -1,0 +1,23 @@
+//@import "../scss/style-none.scss";
+@import "../scss/style-auto.scss";
+@import "../scss/button-up.scss";
+@import "bootstrap.min.css";
+@import "owl.carousel.min.css";
+@import "owl.theme.default.min.css";
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Source+Sans+Pro:400,400i,600,600i,700&display=swap');
+@import "../fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.css";
+
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  color: #999999;
+}
+
+
+//font-family: 'Quicksand', sans-serif;
+
+//Header ___________________________
+
+.header {
+   background-color: #4c4c4c;
+}
