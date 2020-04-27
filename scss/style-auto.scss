@@ -1,8 +1,9 @@
 
 //Переменные ______________________
 
-$text-color: #4d4d4d;
-$font-famely: 'Asap', sans-serif;
+$text-color: #999999;
+$text-height: 1;
+$font-family: 'Source Sans Pro', sans-serif;
 
 //Mixin ______________________
 
@@ -17,37 +18,98 @@ $font-famely: 'Asap', sans-serif;
 %btn {
   line-height: 50px;
   width: 160px;
-  font-size: 16px;
-  font-weight: 600;
-  color: $text-color;
-  background-color: #dfdfdf;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: transparent;
   text-transform: uppercase;
-  border: 1px solid #4d4d4d;
-  border-radius: 0;
+  border: 1px solid #454449;
+  border-radius: 5px;
+  -webkit-transition:0.3s all ease;
+  transition:0.3s ease all;
+  position: relative;
+  overflow: hidden;
 
   padding: 0;
+
+  &:before {
+    -webkit-transition:0.5s all ease;
+    transition:0.5s all ease;
+    position:absolute;
+    top:0;
+    left:50%;
+    right:50%;
+    bottom:0;
+    opacity:0;
+    content:'';
+    background-color: #008ed6;
+    z-index: 0;
+  }
+  &:hover {
+    &:before {
+      -webkit-transition:0.5s all ease;
+      transition:0.5s all ease;
+      left:0;
+      right:0;
+      opacity:1;
+    }
+  }
+  span{
+    position: relative;
+    z-index: 1;
+  }
+  &:focus{
+    box-shadow: none;
+  }
 }
-%title {
-  font-size: 46px;
-  font-weight: 700;
-  line-height: 1;
-  color: $text-color;
-  opacity: .8;
-  text-transform: uppercase;
-  position: relative;
-}
-%title__after{
-  display: inline-block;
+
+%before {
+  display: block;
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 60px;
-  background-color: $text-color;
 }
-%text{
-  font-size: 24px;
+
+%subtitle {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: $text-height;
+  color: #008ed6;
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+%title {
+  font-size: 36px;
   font-weight: 600;
-  color: $text-color;
+  line-height: $text-height;
+  color: #1a1a1a;
+  position: relative;
+
+  margin-bottom: 110px;
+
+  &:before {
+    @extend %before;
+    bottom: 0;
+    right: 50%;
+    height: 2px;
+    width: 20px;
+    background-color: #008ed6;
+    margin: 0 1px -30px 0;
+  }
+
+  &:after {
+    @extend %before;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 20px;
+    background-color: #008ed6;
+    margin: 0 0 -30px 1px;
+  }
+}
+
+%text{
+  width: 470px;
+  line-height: 1.5;
 }
