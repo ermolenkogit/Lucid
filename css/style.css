@@ -1,7 +1,7 @@
 @import url(bootstrap.min.css);
 @import url(owl.carousel.min.css);
 @import url(owl.theme.default.min.css);
-@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700|Source+Sans+Pro:400,400i,600,600i,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700|Source+Sans+Pro:300,400,400i,600,600i,700&display=swap");
 @import url(../fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.css);
 * {
   padding: 0;
@@ -78,7 +78,7 @@ h6 {
   font-size: inherit;
   font-weight: inherit; }
 
-.header__inner .header__row .btn {
+.header__inner .header__row .btn, .download .btn {
   line-height: 50px;
   width: 160px;
   font-size: 14px;
@@ -93,7 +93,7 @@ h6 {
   position: relative;
   overflow: hidden;
   padding: 0; }
-  .header__inner .header__row .btn:before {
+  .header__inner .header__row .btn:before, .download .btn:before {
     -webkit-transition: 0.5s all ease;
     transition: 0.5s all ease;
     position: absolute;
@@ -105,24 +105,24 @@ h6 {
     content: '';
     background-color: #008ed6;
     z-index: 0; }
-  .header__inner .header__row .btn:hover:before {
+  .header__inner .header__row .btn:hover:before, .download .btn:hover:before {
     -webkit-transition: 0.5s all ease;
     transition: 0.5s all ease;
     left: 0;
     right: 0;
     opacity: 1; }
-  .header__inner .header__row .btn span {
+  .header__inner .header__row .btn span, .download .btn span {
     position: relative;
     z-index: 1; }
-  .header__inner .header__row .btn:focus {
+  .header__inner .header__row .btn:focus, .download .btn:focus {
     box-shadow: none; }
 
-.product .product__title:before, .description .description__title:before, .sub-description .sub-description__title:before, .product .product__title:after, .description .description__title:after, .sub-description .sub-description__title:after, .header:before, .header .navbar .navbar-nav .nav-link:before, .header .navbar .navbar-nav .nav-link:after {
+.product .product__title:before, .description .description__title:before, .sub-description .sub-description__title:before, .slider .slider__title:before, .product .product__title:after, .description .description__title:after, .sub-description .sub-description__title:after, .slider .slider__title:after, .header:before, .header .navbar .navbar-nav .nav-link:before, .header .navbar .navbar-nav .nav-link:after, .slider:before {
   display: block;
   content: "";
   position: absolute; }
 
-.product .product__subtitle, .description .description__subtitle, .sub-description .sub-description__subtitle {
+.product .product__subtitle, .description .description__subtitle, .sub-description .sub-description__subtitle, .slider .slider__subtitle {
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
@@ -130,21 +130,21 @@ h6 {
   text-transform: uppercase;
   margin-bottom: 20px; }
 
-.product .product__title, .description .description__title, .sub-description .sub-description__title {
+.product .product__title, .description .description__title, .sub-description .sub-description__title, .slider .slider__title {
   font-size: 36px;
   font-weight: 600;
   line-height: 1;
   color: #1a1a1a;
   position: relative;
   margin-bottom: 110px; }
-  .product .product__title:before, .description .description__title:before, .sub-description .sub-description__title:before {
+  .product .product__title:before, .description .description__title:before, .sub-description .sub-description__title:before, .slider .slider__title:before {
     bottom: 0;
     right: 50%;
     height: 2px;
     width: 20px;
     background-color: #008ed6;
     margin: 0 1px -30px 0; }
-  .product .product__title:after, .description .description__title:after, .sub-description .sub-description__title:after {
+  .product .product__title:after, .description .description__title:after, .sub-description .sub-description__title:after, .slider .slider__title:after {
     bottom: 0;
     left: 50%;
     height: 2px;
@@ -297,7 +297,8 @@ body {
     display: flex;
     justify-content: center; }
     .description .description__images .description__devices {
-      display: block; }
+      display: block;
+      width: 100%; }
   .description .description__subtitle {
     margin-top: 50px; }
   .description .description__title {
@@ -306,6 +307,8 @@ body {
       left: 0; }
     .description .description__title:after {
       left: 22px; }
+  .description .description__text {
+    margin-bottom: 30px; }
   .description .description__list {
     font-size: 18px;
     color: #1b1b1b;
@@ -333,9 +336,86 @@ body {
   .sub-description .sub-description__images {
     display: flex;
     justify-content: center;
-    margin-top: 50px; }
+    margin: 90px 0 50px; }
     .sub-description .sub-description__images .sub-description__devices {
       display: block;
-      width: 680px; }
+      width: 100%; }
+
+.slider {
+  background: #372d28 url("../images/Slider/bg-slider.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  padding-bottom: 215px; }
+  .slider:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #15141a;
+    opacity: .7; }
+  .slider .slider__subtitle {
+    margin-top: 60px; }
+  .slider .slider__title {
+    color: #ffffff;
+    margin-bottom: 30px; }
+  .slider .slider__text {
+    font-size: 24px;
+    line-height: 1.4;
+    color: #ffffff;
+    font-style: italic;
+    margin-top: 90px; }
+  .slider .slider__inner {
+    display: flex;
+    align-items: center;
+    margin-top: 15px; }
+    .slider .slider__inner .slider__images {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 22px; }
+    .slider .slider__inner .slider__name {
+      font-size: 16px;
+      color: #ffffff;
+      margin-bottom: 15px; }
+    .slider .slider__inner .slider__position {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      text-transform: uppercase; }
+  .slider .owl-carousel {
+    display: block; }
+    .slider .owl-carousel button.owl-dot {
+      height: 6px;
+      width: 6px;
+      border: 1px solid #4c484a;
+      border-radius: 50%;
+      background-color: transparent;
+      outline: none;
+      margin-right: 20px; }
+    .slider .owl-carousel button.owl-dot.active {
+      height: 14px;
+      width: 14px;
+      background-color: #ffffff;
+      transition: background-color .2s linear; }
+    .slider .owl-carousel .owl-dots {
+      position: absolute;
+      bottom: -135px;
+      right: 50%;
+      margin-right: -65px;
+      display: flex;
+      align-items: center; }
+
+.download {
+  background-color: #15141a;
+  padding: 60px 0; }
+  .download .download__text {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffffff; }
+    .download .download__text span {
+      font-weight: 300; }
+  .download .btn:first-of-type {
+    margin-right: 20px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,7 +4,7 @@
 @import "bootstrap.min.css";
 @import "owl.carousel.min.css";
 @import "owl.theme.default.min.css";
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Source+Sans+Pro:400,400i,600,600i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Source+Sans+Pro:300,400,400i,600,600i,700&display=swap');
 @import "../fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.css";
 
 body {
@@ -203,6 +203,7 @@ body {
 
     .description__devices {
       display: block;
+      width: 100%;
     }
   }
 
@@ -227,6 +228,8 @@ body {
   }
   .description__text {
     @extend %text;
+
+    margin-bottom: 30px;
   }
 
   .description__list {
@@ -281,14 +284,147 @@ body {
     display: flex;
     justify-content: center;
 
-    margin-top: 50px;
+    margin: 90px 0 50px;
 
     .sub-description__devices {
       display: block;
-      width: 680px;
+      width: 100%;
     }
   }
 }
+
+//Slider ___________________________
+
+.slider{
+  background: #372d28 url('../images/Slider/bg-slider.jpg') no-repeat center;
+  background-size: cover;
+  position: relative;
+
+  padding-bottom: 215px;
+
+  &:before {
+    @extend %before;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #15141a;
+    opacity: .7;
+  }
+
+  .slider__subtitle{
+    @extend %subtitle;
+
+    margin-top: 60px;
+  }
+
+  .slider__title{
+    @extend %title;
+    color: #ffffff;
+
+    margin-bottom: 30px;
+  }
+
+  .slider__text{
+    font-size: 24px;
+    line-height: 1.4;
+    color: #ffffff;
+    font-style: italic;
+
+    margin-top: 90px;
+  }
+  .slider__inner{
+    display: flex;
+    align-items: center;
+
+    margin-top: 15px;
+
+    .slider__images{
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      margin-right: 22px;
+    }
+
+    .slider__name{
+      font-size: 16px;
+      color: #ffffff;
+
+      margin-bottom: 15px;
+    }
+
+    .slider__position{
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+  }
+  .owl-carousel {
+    display: block;
+
+    button.owl-dot {
+      height: 6px;
+      width: 6px;
+      border: 1px solid #4c484a;
+      border-radius: 50%;
+      background-color: transparent;
+      outline: none;
+
+      margin-right: 20px;
+    }
+
+    button.owl-dot.active {
+      height: 14px;
+      width: 14px;
+      background-color: #ffffff;
+      transition: background-color .2s linear;
+    }
+
+    .owl-dots {
+      position: absolute;
+      bottom: -135px;
+      right: 50%;
+      margin-right: -65px;
+      display: flex;
+      align-items: center;
+      //
+      //@include max-screen(425px) {
+      //  bottom: -5px;
+      //  margin-right: -25px;
+      //}
+    }
+  }
+}
+
+//Download ___________________________
+
+.download {
+  background-color: #15141a;
+
+  padding: 60px 0;
+
+  .download__text {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffffff;
+
+    span{
+      font-weight: 300;
+    }
+  }
+
+  .btn {
+    @extend %btn;
+
+    &:first-of-type {
+      margin-right: 20px;
+    }
+  }
+}
+
 
 
 
