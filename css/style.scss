@@ -46,6 +46,12 @@ body {
       }
     }
 
+    button{
+      &:focus{
+        outline: none;
+      }
+    }
+
     .navbar-nav {
 
       .nav-link {
@@ -57,6 +63,10 @@ body {
 
         padding: 0;
         margin: 0 12px;
+
+        @include max-screen(425px) {
+          margin: 0;
+        }
 
         &:before {
           @extend %before;
@@ -89,15 +99,31 @@ body {
             width: 45%;
           }
         }
-
       }
     }
   }
 }
 
+.navbar-toggler {
+  background-color: #ffffff;
+}
+.navbar-nav {
+  text-align: center;
+
+  li {
+    padding: 6px 0;
+  }
+}
+
+
 .header__inner {
   margin: 65px 0 110px;
   width: 490px;
+
+  @include max-screen(768px) {
+    width: auto;
+    margin: 0 0 60px;
+  }
 
   .header__subtitle {
     font-size: 14px;
@@ -116,6 +142,10 @@ body {
     color: #FFFFFF;
 
     margin-bottom: 20px;
+
+    @include max-screen(768px) {
+      font-size: 46px;
+    }
   }
 
   .header__text {
@@ -124,12 +154,23 @@ body {
   }
 
   .header__row {
+    @include max-screen(425px) {
+      text-align: center;
+    }
 
     .btn {
       @extend %btn;
 
       &:first-of-type {
         margin-right: 20px;
+
+        @include max-screen(768px) {
+          margin-right: 6px;
+        }
+        @include max-screen(320px) {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
       }
     }
   }
@@ -145,6 +186,10 @@ body {
     top: 20px;
     display: block;
     width: 428px;
+
+    @include max-screen(768px) {
+      width: 100%;
+    }
   }
 }
 
@@ -157,12 +202,20 @@ body {
 
   padding: 65px 0 75px;
 
+  @include max-screen(425px) {
+    padding: 60px 0;
+  }
+
   .product__subtitle {
     @extend %subtitle;
   }
 
   .product__title {
     @extend %title;
+
+    @include max-screen(425px) {
+      margin-bottom: 60px;
+    }
   }
 
   .product__images {
@@ -187,6 +240,10 @@ body {
   .product__text {
     line-height: 1.5;
     width: 240px;
+
+    @include max-screen(768px) {
+      width: auto;
+    }
   }
 }
 
@@ -197,9 +254,17 @@ body {
 
   padding-top: 65px;
 
+  @include max-screen(425px) {
+    padding-top: 0;
+  }
+
   .description__images {
     display: flex;
     justify-content: center;
+
+    @include max-screen(425px) {
+      display: none;
+    }
 
     .description__devices {
       display: block;
@@ -228,6 +293,10 @@ body {
   }
   .description__text {
     @extend %text;
+
+    @include max-screen(768px) {
+      width: auto;
+    }
 
     margin-bottom: 30px;
   }
@@ -260,12 +329,17 @@ body {
     @extend %subtitle;
 
     margin-top: 130px;
+
+    @include max-screen(768px) {
+      margin-top: 50px;
+    }
   }
 
   .sub-description__title {
     @extend %title;
 
     margin-bottom: 60px;
+
 
     &:before {
       left: 0;
@@ -278,6 +352,10 @@ body {
 
   .sub-description__text {
     @extend %text;
+
+    @include max-screen(768px) {
+      width: auto;
+    }
   }
 
   .sub-description__images {
@@ -285,6 +363,13 @@ body {
     justify-content: center;
 
     margin: 90px 0 50px;
+
+    @include max-screen(768px) {
+      margin: 115px 0 0;
+    }
+    @include max-screen(425px) {
+      display: none;
+    }
 
     .sub-description__devices {
       display: block;
@@ -301,6 +386,10 @@ body {
   position: relative;
 
   padding-bottom: 215px;
+
+  @include max-screen(425px) {
+    padding-bottom: 65px;
+  }
 
   &:before {
     @extend %before;
@@ -331,13 +420,22 @@ body {
     color: #ffffff;
     font-style: italic;
 
-    margin-top: 90px;
+    margin: 90px 5px 0 5px;
+
+    @include max-screen(425px) {
+      font-size: 22px;
+      margin: 35px 15px 0;
+    }
   }
   .slider__inner{
     display: flex;
     align-items: center;
 
-    margin-top: 15px;
+    margin: 15px 5px 0;
+
+    @include max-screen(425px) {
+      margin: 15px 15px 0;
+    }
 
     .slider__images{
       height: 60px;
@@ -380,7 +478,7 @@ body {
       height: 14px;
       width: 14px;
       background-color: #ffffff;
-      transition: background-color .2s linear;
+      transition: background-color 1s linear;
     }
 
     .owl-dots {
@@ -390,11 +488,10 @@ body {
       margin-right: -65px;
       display: flex;
       align-items: center;
-      //
-      //@include max-screen(425px) {
-      //  bottom: -5px;
-      //  margin-right: -25px;
-      //}
+
+      @include max-screen(425px) {
+        bottom: -40px;
+      }
     }
   }
 }
@@ -444,6 +541,10 @@ body {
   .card-deck {
     padding: 70px 0 60px;
 
+    @include max-screen(425px) {
+      padding: 35px 0 0;
+    }
+
     .card {
       border-radius: 0;
 
@@ -451,6 +552,10 @@ body {
         background-color: #fff;
 
         padding: 30px 0;
+
+        @include max-screen(425px) {
+          padding: 10px 0;
+        }
 
         h4 {
           font-size: 24px;
@@ -464,7 +569,11 @@ body {
         border-bottom: 1px solid #e0e0e0;
         transition: .2s linear;
 
-        padding: 35px 0 35px;
+        padding: 35px 0;
+
+        @include max-screen(425px) {
+          padding: 30px;
+        }
 
         h4 {
           font-size: 48px;
@@ -486,6 +595,10 @@ body {
           line-height: 1.5;
 
           margin: 34px 0 40px;
+
+          @include max-screen(425px) {
+            margin: 0 0 20px;
+          }
 
           span {
             color: #008ed6;
@@ -528,10 +641,184 @@ body {
 
 //Contact ___________________________
 
+.contact{
+  background-color: #ededed;
 
+  .contact__subtitle{
+    @extend %subtitle;
 
+    margin-top: 60px;
+  }
 
+  .contact__title{
+    @extend %title;
 
+    margin-bottom: 30px;
+  }
+
+  .contact__images{
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+
+    margin: 60px 0 30px;
+
+    @include max-screen(425px) {
+      margin: 35px 0 10px;
+    }
+  }
+
+  .contact__address{
+    line-height: 1.5;
+
+    margin-bottom: 65px;
+
+    @include max-screen(425px) {
+      margin-bottom: 0;
+    }
+  }
+
+  .contact__form{
+    background-color: #15141a;
+
+    padding: 60px 85px 40px 65px;
+    margin-bottom: -65px;
+
+    @include max-screen(768px) {
+      padding: 40px;
+    }
+    @include max-screen(425px) {
+      padding: 20px;
+      margin-top: 35px;
+    }
+
+    input{
+      width: 100%;
+      line-height: 50px;
+
+      font-size: 14px;
+      font-weight: 700;
+      color: #5d5d5f;
+      text-transform: uppercase;
+      background-color: transparent;
+
+      border: solid 1px #5d5d5f;
+      border-radius: 5px;
+      padding-left: 15px;
+      margin-bottom: 20px;
+    }
+
+    textarea{
+      height: 196px;
+      width: 300px;
+
+      font-size: 14px;
+      font-weight: 700;
+      color: #5d5d5f;
+      text-transform: uppercase;
+      background-color: transparent;
+
+      border: solid 1px #5d5d5f;
+      border-radius: 5px;
+      padding: 15px 0 0 15px;
+
+      @include max-screen(425px) {
+        width: 100%;
+      }
+    }
+
+    .btn{
+      @extend %btn;
+      color: #5d5d5f;
+
+      @include max-screen(425px) {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+//Map ___________________________
+
+.map{
+  height: 370px;
+}
+
+//Footer ___________________________
+
+.footer {
+  background-color: #15141a;
+
+  padding: 50px 0 45px;
+
+  .footer__social {
+    margin-bottom: 30px;
+
+    .social__icon {
+      margin: 0 15px;
+
+      i {
+        font-size: 18px;
+        color: #444348;
+        transition: .2s linear;
+
+        &.icon--fb:hover {
+          color: #3b5997;
+        }
+        &.icon--tw:hover {
+          color: #3ec2f3;
+        }
+        &.icon--in:hover {
+          color: #0e76a8;
+        }
+        &.icon--be:hover {
+          color: #053eff;
+        }
+        &.icon--db:hover {
+          color: #ea4c89;
+        }
+      }
+    }
+  }
+
+  .footer__copyright{
+    font-size: 14px;
+    font-weight: 600;
+    color: #444348;
+    text-transform: uppercase;
+  }
+}
+
+//Button-up ___________________________
+
+#button-up{
+  display: none;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  right: 30px;
+  bottom: 90px;
+  text-align: center;
+  font-size: 24px;
+  color: #ffffff;
+  background-color: #008ed6;
+  border-radius: 5px;
+  transition: .3s;
+
+  padding-top: 8px;
+
+  @include max-screen(425px) {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+#button-up:hover{
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 20px -5px #B3B3B3;
+  box-shadow: 0 0 20px -5px #B3B3B3;
+}
 
 
 
